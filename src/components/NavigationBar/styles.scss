@@ -21,7 +21,6 @@
         @include no-margin();
 
         .nav-text{
-            // @include text-black($align-left, $white, $regular, $title-fontSize);
             @include text-light-shade($align-left, $title-fontSize);
         }
     }
