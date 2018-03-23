@@ -1,0 +1,28 @@
+@import '../../styles/Addons';
+
+.nav-bar-container{
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(90deg, #8BC53F 0%, #069DD8 100%);
+
+    .gl-logo-panel{
+        @include no-padding();
+        @include no-margin();
+                
+        .gl-logo{
+            height: 56px;
+            width: 89px;
+            background-image: url('./image/Logo.png')
+        }
+    }
+
+    .gl-nav-bar-panel{
+        @include no-padding();
+        @include no-margin();
+
+        .nav-text{
+            // @include text-black($align-left, $white, $regular, $title-fontSize);
+            @include text-light-shade($align-left, $title-fontSize);
+        }
+    }
+}
