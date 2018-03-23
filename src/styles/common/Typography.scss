@@ -1,0 +1,92 @@
+@mixin font-style-normal() {
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@mixin font-bold() {
+    @include font-style-normal();
+    font-weight: $font-weight-bold;
+}
+
+@mixin font-regular() {
+    @include font-style-normal();
+    font-weight: $font-weight-normal;
+}
+
+@mixin getWeight($weight) {
+    @if $weight==$bold {
+        @include font-bold();
+    }
+    @else {
+        @include font-regular();
+    }
+}
+
+@mixin getFontShade($align, $color, $hover, $visited, $active, $size) {
+    font-family: $roboto-light;
+    @include font-regular();
+    color: $color;
+    font-size: $size;
+    text-align: $align;
+    &:hover {
+        color: $hover;
+    }
+    &:visited {
+        color: $visited;
+    }
+    &:active {
+        color: $active;
+    }
+}
+
+@mixin text-black($alignment: $default-alignment, $color: $jet-black, $weight: $regular, $fontSize: $default-fontSize) {
+    font-family: $roboto-black;
+    @include getWeight($weight);
+    font-size: $fontSize;
+    color: $color;
+    text-align: $alignment;
+}
+
+@mixin text-bold($alignment: $default-alignment, $color: $jet-black, $weight: $regular, $fontSize: $default-fontSize) {
+    font-family: $roboto-bold;
+    @include getWeight($weight);
+    font-size: $fontSize;
+    color: $color;
+    text-align: $alignment;
+}
+
+@mixin text-light($alignment: $default-alignment, $color: $jet-black, $weight: $regular, $fontSize: $default-fontSize) {
+    font-family: $roboto-light;
+    @include getWeight($weight);
+    font-size: $fontSize;
+    color: $color;
+    text-align: $alignment;
+}
+
+@mixin text-regular($alignment: $default-alignment, $color: $jet-black, $weight: $regular, $fontSize: $default-fontSize) {
+    font-family: $roboto-regular;
+    @include getWeight($weight);
+    font-size: $fontSize;
+    color: $color;
+    text-align: $alignment;
+}
+
+@mixin text-blue-shade($align: $default-alignment, $fontSize: $default-fontSize) {
+    @include getFontShade($align, #0A56A3, #0E6FD6, #094789, #073A70, $fontSize);
+}
+
+@mixin text-grey-shade($align: $default-alignment, $fontSize: $default-fontSize) {
+    @include getFontShade($align, $spanish-gray, #666666, #7F7F7F, #4C4C4C, $fontSize);
+}
+
+@mixin text-dark-shade($align: $default-alignment, $fontSize: $default-fontSize) {
+    @include getFontShade($align, $jet-black, #666666, #4C4C4C, $black, $fontSize);
+}
+
+@mixin text-light-shade($align: $default-alignment, $fontSize: $default-fontSize) {
+    @include getFontShade($align, $white, $white, #F2F2F2, $jet-black, $fontSize);
+}
+
+@mixin text-red-shade($align: left, $fontSize: $default-fontSize) {
+    @include getFontShade($align, $red, #CC0000, #E50000, #B20000, $fontSize);
+}
