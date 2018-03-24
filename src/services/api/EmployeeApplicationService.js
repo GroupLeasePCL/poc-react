@@ -3,9 +3,12 @@ import axios from 'axios';
 const endpoint = "http://172.255.152.115:8081/employment-applications";
 export default class EmployeeApplicationService {
 
-  static fetch(offset, limit) {
+  static fetch(offset, limit, filter) {
 
-    return axios.get(endpoint + "?offset=" + offset + "&limit=" + limit).then(
+    return axios.get(endpoint + "?offset=" + offset + "&limit=" + limit
+        + (filter
+        !== undefined ? "&" + Object.keys(filter).map(
+            key => key + "=" + filter[key]).join("&") : "")).then(
         response => response.data);
   }
 
