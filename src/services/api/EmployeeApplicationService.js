@@ -6,9 +6,7 @@ export default class EmployeeApplicationService {
   static fetch(offset, limit) {
 
     return axios.get(endpoint + "?offset=" + offset + "&limit=" + limit).then(
-        response => {
-          return Promise.resolve(response.data);
-        });
+        response => response.data);
   }
 
   static create(application) {
@@ -33,25 +31,25 @@ export default class EmployeeApplicationService {
   static getPersonalInformation(applicationId, personalInformation) {
 
     return axios.get(endpoint + "/" + applicationId + "/personal-info").then(
-        response => Promise.resolve(response.data));
+        response => response.data);
   }
 
   static getEducation(applicationId, education) {
 
     return axios.get(endpoint + "/" + applicationId + "/education").then(
-        response => Promise.resolve(response.data));
+        response => response.data);
   }
 
   static getWorkingExperience(applicationId, workingExperience) {
 
     return axios.get(endpoint + "/" + applicationId
         + "/working-experience").then(
-        response => Promise.resolve(response.data));
+        response => response.data);
   }
 
   static get(applicationId) {
 
     return axios.get(endpoint + "/" + applicationId).then(
-        response => Promise.resolve(response.data));
+        response => response.data);
   }
 }
