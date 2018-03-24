@@ -15,17 +15,19 @@ export default class EmployeeApplicationService {
 
   static updatePersonalInformation(applicationId, personalInformation) {
 
-    return axios.put(endpoint + "/" + applicationId + "/personal-info");
+    return axios.put(endpoint + "/" + applicationId + "/personal-info",
+        personalInformation);
   }
 
   static updateEducation(applicationId, education) {
 
-    return axios.put(endpoint + "/" + applicationId + "/education");
+    return axios.put(endpoint + "/" + applicationId + "/education", education);
   }
 
   static updateWorkingExperience(applicationId, workingExperience) {
 
-    return axios.put(endpoint + "/" + applicationId + "/working-experience");
+    return axios.put(endpoint + "/" + applicationId + "/working-experience",
+        workingExperience);
   }
 
   static getPersonalInformation(applicationId, personalInformation) {
