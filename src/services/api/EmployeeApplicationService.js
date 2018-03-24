@@ -32,17 +32,21 @@ export default class EmployeeApplicationService {
 
   static getPersonalInformation(applicationId, personalInformation) {
 
-    return axios.get(endpoint + "/" + applicationId + "/personal-info");
+    return axios.get(endpoint + "/" + applicationId + "/personal-info").then(
+        response => Promise.resolve(response.data));
   }
 
   static getEducation(applicationId, education) {
 
-    return axios.get(endpoint + "/" + applicationId + "/education");
+    return axios.get(endpoint + "/" + applicationId + "/education").then(
+        response => Promise.resolve(response.data));
   }
 
   static getWorkingExperience(applicationId, workingExperience) {
 
-    return axios.get(endpoint + "/" + applicationId + "/working-experience");
+    return axios.get(endpoint + "/" + applicationId
+        + "/working-experience").then(
+        response => Promise.resolve(response.data));
   }
 
   static get(applicationId) {
