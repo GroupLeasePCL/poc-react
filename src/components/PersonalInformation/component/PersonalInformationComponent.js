@@ -1,8 +1,6 @@
-import React, { Component } from 'react'
-import {
-    Col, Button, Form, FormGroup, Label, Input, FormText, Card, CardImg, CardText, CardBody, CardLink,
-    CardTitle, CardSubtitle
-} from 'reactstrap';
+import React, {Component} from 'react'
+import {Col, Form, FormGroup, Input, Label} from 'reactstrap';
+
 export default class PersonalInformationComponent extends Component {
     constructor(props) {
         super(props);
@@ -13,7 +11,8 @@ export default class PersonalInformationComponent extends Component {
                 <h1>Personal Information</h1>
                 <Form>
                     <FormGroup row>
-                        <Label for="firstname" sm={12} md={4} lg={4} class="control-label">Firstname</Label>
+                      <Label for="firstname" sm={12} md={4} lg={4}
+                             className="control-label">Firstname</Label>
                         <Label for="lastName" sm={12} md={4} lg={4}>LastName</Label>
                         <Label for="birthName"sm={12} md={4} lg={4}>Birthdate</Label>
                     </FormGroup>

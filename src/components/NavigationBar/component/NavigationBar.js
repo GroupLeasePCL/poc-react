@@ -1,17 +1,17 @@
-import React, { Component } from 'react'
-import { Container, Row, Col } from 'reactstrap';
+import React, {Component} from 'react'
 import {
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem } from 'reactstrap';
+  Col,
+  Collapse,
+  Container,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  Nav,
+  Navbar,
+  NavbarToggler,
+  Row,
+  UncontrolledDropdown
+} from 'reactstrap';
 
 export default class NavigationBar extends Component {
     constructor(props) {
@@ -20,7 +20,7 @@ export default class NavigationBar extends Component {
         this.toggle = this.toggle.bind(this)
         this.state = {
             isOpen: false,
-            flip: true
+          flip: "true"
         }
     }
 
@@ -43,7 +43,8 @@ export default class NavigationBar extends Component {
                                 <NavbarToggler onClick={this.toggle} />
                                 <Collapse isOpen={this.state.isOpen} navbar>
                                     <Nav navbar>
-                                        <UncontrolledDropdown flip= {this.state.flip}>
+                                      <UncontrolledDropdown
+                                          flip={this.state.flip}>
                                             <DropdownToggle 
                                                 className="nav-text" 
                                                 nav= {true}

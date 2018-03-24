@@ -24,28 +24,29 @@ export default class EmployeeApplicationService {
 
   static updateEducation(applicationId, education) {
 
-    return axios.put(endpoint + "/" + applicationId + "/education", education);
+    return axios.put(endpoint + "/" + applicationId + "/education",
+        education).catch(reason => console.log(reason));
   }
 
   static updateWorkingExperience(applicationId, workingExperience) {
-
+    console.log(workingExperience);
     return axios.put(endpoint + "/" + applicationId + "/working-experience",
-        workingExperience);
+        workingExperience).catch(reason => console.log(reason));
   }
 
-  static getPersonalInformation(applicationId, personalInformation) {
+  static getPersonalInformation(applicationId) {
 
     return axios.get(endpoint + "/" + applicationId + "/personal-info").then(
         response => response.data);
   }
 
-  static getEducation(applicationId, education) {
+  static getEducation(applicationId) {
 
     return axios.get(endpoint + "/" + applicationId + "/education").then(
         response => response.data);
   }
 
-  static getWorkingExperience(applicationId, workingExperience) {
+  static getWorkingExperience(applicationId) {
 
     return axios.get(endpoint + "/" + applicationId
         + "/working-experience").then(
